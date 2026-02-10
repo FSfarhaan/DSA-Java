@@ -1,5 +1,3 @@
-import java.io.ObjectInputFilter;
-
 public class MyPow {
     static double posPow(double x, int n) {
         if(n == 1) return x;
