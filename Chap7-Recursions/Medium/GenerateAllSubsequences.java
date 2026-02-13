@@ -86,13 +86,14 @@ public class GenerateAllSubsequences {
 
         return left + right;
     }
+    
     public static void main(String[] args) {
-        int arr[] = { 4, 9, 2, 5, 1 };
-        int k = 6;
+        int arr[] = { 2,5,2,1,2 };
+        int k = 5;
         ArrayList<Integer> list = new ArrayList<>();
         // generateSS(arr, 0, list);
-        // generateSSWithSumk(arr, 0, list, k, 0);
+        generateSSWithSumk(arr, 0, list, k, 0);
         // generateFirstSSOfSumK(arr, 0, list, k, 0);
-        System.out.println(countSSOfSumK(arr, 0, list, k, 0));
+        // System.out.println(countSSOfSumK(arr, 0, list, k, 0));
     }
 }
