@@ -3,21 +3,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SubsetsII {
-    static void getSubsets(int index, int arr[], List<Integer> ds, List<List<Integer>> ans) {
-        if(index == arr.length) {
-            if(ds.size() == 0) ans.add(new ArrayList<>());
-
-            else {
-                if(!ans.contains(ds)) ans.add(new ArrayList<>(ds));
-            }
-            return;
+    // Optimized solution using backtracking with duplicate handling
+    static void getSubsets(int index, int[] arr, List<Integer> ds, List<List<Integer>> ans) {
+        ans.add(new ArrayList<>(ds));
+        
+        for(int i = index; i < arr.length; i++) {
+            if(i > index && arr[i] == arr[i-1]) continue;
+            ds.add(arr[i]);
+            getSubsets(i + 1, arr, ds, ans);
+            ds.remove(ds.size() - 1);
         }
-
-        ds.add(arr[index]);
-        getSubsets(index+1, arr, ds, ans);
-
-        ds.remove(ds.size() - 1);
-        getSubsets(index+1, arr, ds, ans);
     }
 
     static List<List<Integer>> subsets(int[] nums) {
@@ -29,7 +24,7 @@ public class SubsetsII {
     }
 
     public static void main(String[] args) {
-        int nums[] = { 4,4,4,1,4 };
+        int nums[] = { 1,2,2 };
         List<List<Integer>> ans = subsets(nums);
 
         System.out.println(ans.size());
