@@ -86,7 +86,6 @@ public class GenerateAllSubsequences {
 
         return left + right;
     }
-    
     public static void main(String[] args) {
         int arr[] = { 2,5,2,1,2 };
         int k = 5;
