@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class LongestPalindromicSubstring {
 
     static boolean isPalindrome(String s, int n) {
