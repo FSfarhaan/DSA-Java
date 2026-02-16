@@ -84,22 +84,22 @@ public class SudokuSolver{
 
     static boolean solve(char[][] board) {
        for(int i = 0; i < 9; i++) {
-        for(int j = 0; j < 9; j++) {
-            if(board[i][j] == '.') {
-                
-                for(char ele = '1'; ele <= '9'; ele++) {
-                    if(isValid(i, j, ele, board)) {
-                        board[i][j] = ele;
+            for(int j = 0; j < 9; j++) {
+                if(board[i][j] == '.') {
+                    
+                    for(char ele = '1'; ele <= '9'; ele++) {
+                        if(isValid(i, j, ele, board)) {
+                            board[i][j] = ele;
 
-                        if(solve(board)) return true;
-                        
-                        board[i][j] = '.';
+                            if(solve(board)) return true;
+                            
+                            board[i][j] = '.';
+                        }
                     }
-                }
 
-                return false;
+                    return false;
+                }
             }
-        }
        }
        return true;
     }
@@ -119,7 +119,7 @@ public class SudokuSolver{
             { '7','.','.','.','2','.','.','.','6' },
             { '.','6','.','.','.','.','2','8','.' },
             { '.','.','.','4','1','9','.','.','5' },
-            { '.','.','.','.','8','.','.','7','9' }
+            { '.','.','.','.','8','.','.','7','9' },
         };
 
         solveSudoku(board);
