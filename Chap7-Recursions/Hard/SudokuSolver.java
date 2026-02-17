@@ -121,9 +121,17 @@ public class SudokuSolver{
             { '.','.','.','4','1','9','.','.','5' },
             { '.','.','.','.','8','.','.','7','9' },
         };
+        System.out.println("Before: ");
+        for(int i = 0; i < 9; i++) {
+            for(int j = 0; j < 9; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
 
         solveSudoku(board);
-
+        System.out.println();
+        System.out.println("After: ");
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
                 System.out.print(board[i][j] + " ");
