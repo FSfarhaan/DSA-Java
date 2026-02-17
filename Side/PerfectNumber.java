@@ -17,6 +17,8 @@ public class PerfectNumber {
         }
         
         System.out.println("Sum to ye hai: " + sum);
+        boolean x = true, y = false;
+        System.out.println(x && y);
 
         return divisors;
     }

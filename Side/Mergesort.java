@@ -1,5 +1,3 @@
-package Side;
-
 import java.util.ArrayList;
 
 public class Mergesort {
