@@ -24,7 +24,7 @@ public class SquareRoot {
     }
 
     public static void main(String[] args) {
-        int x = 2147395600;
+        int x = 9;
         System.out.println(mySqrt2(x));
     }
 }
