@@ -1,4 +1,4 @@
-public class checkIthBitIsSet {
+public class CheckIthBitIsSet {
 
     // convert dec to bin
     static String decToBin(int dec) {

@@ -1,6 +1,6 @@
 public class MinimumBitFlips {
 
-    // Brute force
+    // Brute force (TC -> 2logn + k, SC -> k);
     static int flipBits(int start, int goal) {
         
         String s = Integer.toBinaryString(start);
@@ -30,10 +30,21 @@ public class MinimumBitFlips {
 
         return count;
     }
+    
+    static int OptMinFlipBits(int start, int goal) {
+        int n = start ^ goal;
+        int count = 0;
+        while (n != 0) {
+            n = n & (n-1);
+            count++;
+        }
+        return count;
+    }
+    
     public static void main(String[] args) {
-        int start = 10, goal = 7;
+        int start = 13, goal = 8;
 
-        System.out.println(flipBits(start, goal));    
+        System.out.println(OptMinFlipBits(start, goal));
     }
 
 }
