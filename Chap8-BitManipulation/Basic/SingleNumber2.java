@@ -21,7 +21,7 @@ public class SingleNumber2 {
         return 0;
     }
 
-    // Better approach
+    // Better approach (TC -> nlogn + n/3, SC -> 1)
     static int BetSingleNumber(int[] nums) {
         Arrays.sort(nums);
         for(int i = 1; i < nums.length; i += 3) {
