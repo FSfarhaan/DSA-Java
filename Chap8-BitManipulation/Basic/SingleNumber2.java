@@ -21,7 +21,21 @@ public class SingleNumber2 {
         return 0;
     }
 
-    // Better approach (TC -> nlogn + n/3, SC -> 1)
+    // Bit approach (TC -> 32n, SC -> 1);
+    static int BitSingle(int[] nums) {
+        int ans = 0;
+        for(int bit = 0; bit < 32; bit++) {
+            int ones = 0;
+            for(int i = 0; i < nums.length; i++) {
+                if((nums[i] & (1 << bit)) != 0) ones++;
+            }
+            if(ones % 3 != 0) ans = ans | (1 << bit);
+        }
+        return ans;
+    }
+
+    // Better approach (TC -> nlogn + n/3, SC -> 1) 
+    // (Log n will never reach 32, because it has to be 2^32, thats why this is better than the above one)
     static int BetSingleNumber(int[] nums) {
         Arrays.sort(nums);
         for(int i = 1; i < nums.length; i += 3) {
@@ -30,8 +44,19 @@ public class SingleNumber2 {
         return nums[nums.length - 1];
     }
 
+    // Optimal - Bucket approach (TC -> n, SC - > 1);
+    static int BucketSingle(int[] nums) {
+        int ones = 0, twos = 0;
+        for(int i = 0; i < nums.length; i++) {
+            ones = (ones ^ nums[i]) & ~twos;
+            twos = (twos ^ nums[i]) & ~ones;
+        }
+        return ones;
+    }
+
     public static void main(String[] args) {
         int[] nums = { 0,1,0,1,0,1,99 };
-        System.out.println(BetSingleNumber(nums));
+        // 4 -> 1 0 0 & 1 << 2
+        System.out.println(BitSingle(nums));
     }
 }
