@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.*;
 
 class QStack {
     Queue<Integer> q;
@@ -33,7 +32,7 @@ class QStack {
 public class StackUsingQueue {
     
     public static void main(String[] args) {
-        QStack stack = new QStack();
+        // QStack stack = new QStack();
 
     }
 }
