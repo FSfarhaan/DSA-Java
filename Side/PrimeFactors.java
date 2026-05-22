@@ -49,7 +49,7 @@ public class PrimeFactors {
     }
 
     // Optimal (TC -> logn, SC -> 1);
-    static ArrayList<Integer> OptPf(int n) {
+    static ArrayList<Integer> Opt2Pf(int n) {
         ArrayList<Integer> ans = new ArrayList<>();
         for(int i = 2; i * i <= n; i++) {
             if(n % i == 0) {
@@ -59,12 +59,13 @@ public class PrimeFactors {
                 }
             }
         }
+        if(n != 1) ans.add(n);
         return ans;
     }
 
     public static void main(String[] args) {
         int n = 39;
-        ArrayList<Integer> ans = OptPf(n);
+        ArrayList<Integer> ans = Opt2Pf(n);
 
         for(int k: ans) {
             System.out.print(k + " ");

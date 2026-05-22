@@ -55,10 +55,5 @@ public class MinStack {
         minStack.push(3);  
         System.out.println(minStack.getMin()); // returns 1  
         System.out.println(minStack.top()); // returns 1
-
-        long x = 10;
-        int y = (int) x;
-        long z = (long) y;
-        Integer.MAX_VALUE
     }
 }
