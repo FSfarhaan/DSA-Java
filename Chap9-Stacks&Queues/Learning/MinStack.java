@@ -18,8 +18,10 @@ class MyMinStack {
     }
 
     public void push(int x) {
-        if (stack.isEmpty())
+        if (stack.isEmpty()) {
             stack.push(new Node(x, x));
+            return;
+        }
 
         int currMin = stack.peek().min;
         int newMin = currMin;
@@ -53,5 +55,10 @@ public class MinStack {
         minStack.push(3);  
         System.out.println(minStack.getMin()); // returns 1  
         System.out.println(minStack.top()); // returns 1
+
+        long x = 10;
+        int y = (int) x;
+        long z = (long) y;
+        Integer.MAX_VALUE
     }
 }
