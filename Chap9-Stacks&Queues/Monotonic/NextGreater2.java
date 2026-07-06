@@ -27,7 +27,6 @@ public class NextGreater2 {
         return ans;
     }
 
-
     // Optimal approach
     static int[] OptNextGreaterElements(int[] nums) {
         int n = nums.length;
