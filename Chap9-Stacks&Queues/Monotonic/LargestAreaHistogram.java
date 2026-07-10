@@ -72,8 +72,6 @@ public class LargestAreaHistogram {
             
             maxArea = Math.max(maxArea, heights[element] * (NSE - PSE - 1));
         }
-        
-
         return maxArea;
     }
 
