@@ -78,8 +78,8 @@ public class LargestAreaHistogram {
     public static void main(String[] args) {
         int[] arr = { 2,4 };
         
-        int[] NSE = findNSE(arr);
-        int[] PSE = findPSEE(arr);
+        // int[] NSE = findNSE(arr);
+        // int[] PSE = findPSEE(arr);
         // int[] ans = largestRectangleArea(arr);
         
         // for(int k: NSE) {
