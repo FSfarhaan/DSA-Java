@@ -1,4 +1,8 @@
 // Unsolved
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class LongRepeatingChar {
 
     // Brute force
@@ -18,10 +22,36 @@ public class LongRepeatingChar {
         return max;
     }
 
-    public static void main(String[] args) {
-        String s = "BAABAABBBAAA";
-        int k = 2;
+    // Optimal approach
+    static int BetCharacterReplacement(String s, int k) {
+        int n = s.length();
+        int l = 0, r = 0;
+        int[] freqMap = new int[26];
+        int maxFreq = 0, longest = 0;
 
-        System.out.println(characterReplacement(s, k));
+        while (r < n) {
+            char c = s.charAt(r);
+
+            freqMap[c -'A']++;
+            maxFreq = Math.max(maxFreq, freqMap[c - 'A']);
+
+            while ((r - l + 1) - maxFreq > k) {
+                char p = s.charAt(l);
+                freqMap[p - 'A']--;
+                l++;
+            }
+
+            if((r - l + 1) - maxFreq <= k) longest = Math.max(longest, r - l + 1);
+
+            r++;
+        }
+        return longest;
+    }
+
+    public static void main(String[] args) {
+        String s = "AABABBA";
+        int k = 1;
+
+        System.out.println(BetCharacterReplacement(s, k));
     }
 }
