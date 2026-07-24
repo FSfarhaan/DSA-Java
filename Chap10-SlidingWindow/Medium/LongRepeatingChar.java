@@ -1,8 +1,3 @@
-// Unsolved
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class LongRepeatingChar {
 
     // Brute force
