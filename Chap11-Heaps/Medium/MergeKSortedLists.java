@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 class BinaryHeap {
     int capacity;
@@ -188,6 +189,33 @@ public class MergeKSortedLists {
 
         return dummy.next;
     }
+
+    // Sol 3 (Optimal solution) (TC -> nlogk, SC -> k);
+    static ListNode mergeKLists3(ListNode[] lists) {
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(
+            (a, b) -> a.val - b.val 
+        );
+
+        for(ListNode node: lists) {
+            if(node != null) queue.add(node);
+        }
+
+        ListNode dummy = new ListNode(0);
+        ListNode temp = dummy;
+
+        while (!queue.isEmpty()) {
+            ListNode smallest = queue.poll();
+            temp.next = smallest;
+            temp = temp.next;
+
+            if(smallest.next != null) {
+                queue.add(smallest.next);
+            }
+        }
+
+        return dummy.next;
+    }
+
     public static void main(String[] args) {
         int[] arr1 = { 1, 4, 5 };
         int[] arr2 = { 1, 3, 4 };
@@ -199,7 +227,7 @@ public class MergeKSortedLists {
 
         ListNode[] lists = { node1, node2, node3 };
 
-        ListNode ans = mergekLists2(lists);
+        ListNode ans = mergeKLists3(lists);
 
         ListNode temp = ans;
         while (temp != null) {
