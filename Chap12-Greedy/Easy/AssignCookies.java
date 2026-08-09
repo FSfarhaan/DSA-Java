@@ -19,6 +19,7 @@ public class AssignCookies {
 
         return left;
     }
+    
     public static void main(String[] args) {
         int[] g = {1, 2}, s = {1, 2, 3};
         // 7, 8, 9, 10 -> 5, 6, 7, 8
