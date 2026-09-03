@@ -1,6 +1,5 @@
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 class Item {
     int weight;
@@ -13,6 +12,7 @@ class Item {
         this.wBv = (double) value / weight;
     }
 }
+
 public class FractionalKnapsack {
 
     static double fractionalKnapsack(int[] profit, int[] weight, int capacity) {
